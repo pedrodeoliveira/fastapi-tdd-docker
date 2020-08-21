@@ -1,4 +1,4 @@
-name: Continuous Integration and Delivery
+name: CI status
 
 on: [push]
 
