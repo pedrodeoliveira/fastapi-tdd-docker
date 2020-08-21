@@ -1,2 +1,11 @@
 fastapi==0.55.1
 uvicorn==0.11.5
+asyncpg==0.20.1
+tortoise-orm==0.16.12
+pytest==6.0.1
+requests==2.24.0
+gunicorn==20.0.4
+pytest-cov==2.10.1
+flake8==3.8.3
+black==19.10b0
+isort==5.4.2
