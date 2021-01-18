@@ -1,5 +1,6 @@
 .idea/
 __pycache__
 .dockerignore
-Dockerfile
+dockerfiles/
 .git/
+.pytest_cache
