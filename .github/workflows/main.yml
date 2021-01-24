@@ -3,7 +3,7 @@ name: CI/CD status
 on: [push]
 
 env:
-  IMAGE: docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')/web
+  IMAGE: docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')/summarizer
 
 jobs:
 
@@ -29,16 +29,16 @@ jobs:
             --tag ${{ env.IMAGE }}-builder:latest \
             --file ./dockerfiles/app-multistage-prod.dockerfile \
             "."
-          docker build \
-            --target final \
-            --cache-from ${{ env.IMAGE }}-final:latest \
-            --tag ${{ env.IMAGE }}-final:latest \
-            --file ./dockerfiles/app-multistage-prod.dockerfile \
-            "."
+#          docker build \
+#            --target final \
+#            --cache-from ${{ env.IMAGE }}-final:latest \
+#            --tag ${{ env.IMAGE }}-final:latest \
+#            --file ./dockerfiles/app-multistage-prod.dockerfile \
+#            "."
       - name: Push image
         run: |
           docker push ${{ env.IMAGE }}-builder:latest
-          docker push ${{ env.IMAGE }}-final:latest
+#          docker push ${{ env.IMAGE }}-final:latest
 
   test:
     name: Test Docker Image
