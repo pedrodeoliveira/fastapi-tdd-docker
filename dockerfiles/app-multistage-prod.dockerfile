@@ -27,7 +27,7 @@ RUN isort .
 
 
 # pull official base image
-FROM python:3.8.6-slim-buster
+FROM python:3.8.6-slim-buster as final
 
 # create directory for the app user
 RUN mkdir -p /home/app
