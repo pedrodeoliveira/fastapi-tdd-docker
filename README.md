@@ -2,9 +2,11 @@
 
 ![CI/CD status](https://github.com/pedrodeoliveira/fastapi-tdd-docker/workflows/CI/CD%20status/badge.svg)
 
-This repository is based on the paid course with the same name from [testdriven.io](https://testdriven.io), with some minor custom modifications.
-The project consists in the development of an asynchronous **text summarization API** following Test-Driven Development (TDD) practices. 
-The API follows RESTful design principles and enables the typical CRUD operations on the *summaries* entities.
+This repository is based on the paid course with the same name from [testdriven.io](https://testdriven.io), with some 
+minor custom modifications (original repo [here](https://github.com/testdrivenio/fastapi-tdd-docker)).
+The project consists in the development of an asynchronous **text summarization API** 
+following Test-Driven Development (TDD) practices. The API follows RESTful design 
+principles and enables the typical CRUD operations on the *summaries* entities.
 
 ## Technologies
 
