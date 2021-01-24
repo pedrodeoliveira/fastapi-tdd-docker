@@ -21,7 +21,7 @@ jobs:
         run: |
           docker pull ${{ env.IMAGE }}-builder:latest || true
           docker pull ${{ env.IMAGE }}-final:latest || true
-      - name: Build builder image
+      - name: Build image
         run: |
           docker build \
             --target builder \
@@ -29,8 +29,6 @@ jobs:
             --tag ${{ env.IMAGE }}-builder:latest \
             --file ./dockerfiles/app-multistage-prod.dockerfile \
             "."
-      - name: Build final image
-        run: |
           docker build \
             --target final \
             --cache-from ${{ env.IMAGE }}-final:latest \
@@ -40,7 +38,7 @@ jobs:
       - name: Push image
         run: |
           docker push ${{ env.IMAGE }}-builder:latest
-#          docker push ${{ env.IMAGE }}-final:latest
+          docker push ${{ env.IMAGE }}-final:latest
 
   test:
     name: Test Docker Image
@@ -57,7 +55,7 @@ jobs:
         run: |
           docker pull ${{ env.IMAGE }}-builder:latest || true
           docker pull ${{ env.IMAGE }}-final:latest || true
-      - name: Build builder image
+      - name: Build image
         run: |
           docker build \
             --target builder \
@@ -65,8 +63,6 @@ jobs:
             --tag ${{ env.IMAGE }}-builder:latest \
             --file ./dockerfiles/app-multistage-prod.dockerfile \
             "."
-      - name: Build final image
-        run: |
           docker build \
             --target final \
             --cache-from ${{ env.IMAGE }}-final:latest \
@@ -118,7 +114,7 @@ jobs:
             --target builder \
             --cache-from ${{ env.IMAGE }}-builder:latest \
             --tag ${{ env.IMAGE }}-builder:latest \
-            --file ./project/app-multistage-prod.dockerfile \
+            --file ./dockerfiles/app-multistage-prod.dockerfile \
             "."
           docker build \
             --cache-from ${{ env.IMAGE }}-final:latest \
