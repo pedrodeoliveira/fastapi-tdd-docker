@@ -55,7 +55,7 @@ jobs:
         run: |
           docker pull ${{ env.IMAGE }}-builder:latest || true
           docker pull ${{ env.IMAGE }}-final:latest || true
-      - name: Build image
+      - name: Build builder image
         run: |
           docker build \
             --target builder \
@@ -63,6 +63,8 @@ jobs:
             --tag ${{ env.IMAGE }}-builder:latest \
             --file ./dockerfiles/app-multistage-prod.dockerfile \
             "."
+      - name: Build final image
+        run: |
           docker build \
             --target final \
             --cache-from ${{ env.IMAGE }}-final:latest \
