@@ -32,7 +32,7 @@ def test_app_with_db():
     # register test database
     register_tortoise(
         app,
-        db_url=os.environ.get("DATABASE_TEST_URL"),
+        db_url=os.getenv("DATABASE_TEST_URL"),
         modules={"models": ["app.models.tortoise"]},
         generate_schemas=True,
         add_exception_handlers=True,

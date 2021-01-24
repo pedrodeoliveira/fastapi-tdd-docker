@@ -1,5 +1,5 @@
 # noinspection PyPackageRequirements
-from pydantic import BaseModel, AnyHttpUrl
+from pydantic import AnyHttpUrl, BaseModel
 
 
 class SummaryPayloadSchema(BaseModel):

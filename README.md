@@ -25,4 +25,31 @@ into production.
 the web app code to the production.
 - **Heroku** the PaaS solution for hosting our web app (in production).
 
+## API Endpoints
+
+This API implements the following routes:
+
+| **Endpoint**     	| **HTTP method**   | **CRUD method** 	| **Description**      	|
+|-----------------	|----------------  	|---------------	|----------------------	|
+| `/summaries`     	| GET           	| READ        	    | get all summaries    	|
+| `/summaries/<id>`	| GET         	    | READ        	    | get summary by id    	|
+| `/summaries`     	| POST        	    | INSERT      	    | add a new summary 	|
+| `/summaries/<id>`	| DELETE      	    | DELETE      	    | delete summary by id 	|
+| `/summaries/<id>`	| PUT         	    | UPDATE      	    | update summary by id 	|
+
+## How to Run the API
  
+To build, test and run this API we'll be using `docker-compose`. As such, the first step
+is to run (and build, if it's the first time) the services defined in the 
+`docker-compose.yml` file.
+ 
+```bash
+$ docker-compose up -d
+```
+
+This will launch two services named `web` (the API) and `web-db` (the underlying 
+database). The `web` service will be running on port `8002` on localhost. To make sure the
+app is running correctly open [http://localhost:8002/ping] in your web browser (and/or 
+run `docker-compose logs -f` in the command line). 
+
+## 
