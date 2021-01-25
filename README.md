@@ -59,7 +59,7 @@ This will build two images:
 
 ## Run the Containers
  
-To run the containers previously built, run:
+To run the containers previously built, execute the following:
  
 ```bash
 $ docker-compose up -d
@@ -68,8 +68,8 @@ $ docker-compose up -d
 This will launch two services named `web` (the API) and `web-db` (the underlying 
 database) in background. The `web` service will be running on port `8002` on localhost. 
 Whereas the database will be exposed to the `web` service. To make sure the
-app is running correctly open [http://localhost:8002/ping] in your web browser (and/or 
-run `docker-compose logs -f` from the command line). 
+app is running correctly open [http://localhost:8002/ping](http://localhost:8002/ping) in 
+your web browser (and/or run `docker-compose logs -f` from the command line). 
 
 ## Create the Database
 
@@ -111,13 +111,13 @@ $ docker-compose exec web pytest --cov="."
 
 Another step to ensure the code contains the desired quality is to perform *linting*, that 
 is, to check for stylistic or programming errors. The following command will run the 
-`flake8` linter through the source code:
+`flake8` linter throughout the source code:
 
 ```bash
 $ docker-compose exec web flake8 .
 ```
 
-Next, we run additional checks to verify, and possibly correct, the code formatting 
+Next, we perform additional checks to verify, and possibly correct, the code formatting 
 (using `black`) and the ordering and organization of import statements (using `isort`).
 
 ```bash
